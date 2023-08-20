@@ -1,0 +1,45 @@
+.rounded-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rounded-checkbox input {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #54a5f0;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative;
+}
+
+.rounded-checkbox input:checked~.checkbox-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.checkmark {
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.checkbox-custom.checked .checkmark {
+    opacity: 1;
+}

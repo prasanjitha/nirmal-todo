@@ -1,0 +1,25 @@
+.deleteBtn {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-light-100);
+    border-style: none;
+}
+
+.completeBtn {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-gray-120);
+    border-style: none;
+}
+
+.completeBtn:hover,
+.completeBtn:active {
+    background-color: var(--color-gray-140);
+    border-color: var(--color-gray-140);
+}
+
+.deleteBtn:hover,
+.deleteBtn:active {
+    background-color: var(--color-light-200);
+    border-color: var(--color-light-300)
+}

@@ -1,0 +1,18 @@
+.content {
+    position: fixed;
+    border-radius: 10px;
+    padding: 20px;
+    top: 40%;
+    left: 30%;
+    right: 34%;
+    background-color: var(--color-light-100);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-black-800);
+}

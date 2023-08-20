@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #3f3f3f;
+}
+
+:root {
+  --color-light-100: #ffffff;
+  --color-light-200: #efeef3;
+  --color-light-300: #fff9f9;
+  --color-light-400: #ccc;
+
+  --color-gray-100: #e7e6e6;
+  --color-gray-120: rgb(168, 168, 168);
+  --color-gray-140: #838385;
+  --color-gray-200: rgb(168, 168, 168);
+  --color-gray-300: rgb(88, 88, 95);
+  --color-gray-400: #666666;
+  --color-gray-500: #8a8784;
+  --color-gray-600: #656360;
+  --color-gray-700: #4b4a47;
+  --color-gray-800: #31302e;
+  --color-gray-900: #1f1d1b;
+
+  --color-blue-500: blue;
+
+  --color-red-500: red;
+
+  --color-primary-500: #33059e;
+  --color-primary-600: #33059e;
+  --color-primary-700: #240370;
+  --color-primary-800: #240370;
+
+  --color-black-800: rgba(20, 20, 20, 0.5);
+
+  --color-green-600: rgb(3, 141, 26);
+}
+
+button {
+  font: inherit;
+  background-color: var(--color-primary-800);
+  color: white;
+  border: 1px solid var(--color-primary-700);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-600);
+}
