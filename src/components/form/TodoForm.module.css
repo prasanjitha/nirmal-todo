@@ -5,7 +5,7 @@
 
 .cancelbtn {
     position: relative;
-    right: -80%;
+    right: -70%;
 }
 
 .formConfirmbtn {
@@ -15,7 +15,7 @@
 
 .formCancelBtn {
     position: relative;
-    right: -55%;
+    right: -40%;
 }
 
 .input {
@@ -37,7 +37,7 @@
 
 .errorText {
     color: var(--color-red-500);
-    margin-left: 13%;
+    margin-left: 24%;
 }
 
 .title {
@@ -48,4 +48,12 @@
 .mainText {
     font-weight: bold;
     font-size: 28px;
+}
+
+.formActionBtn {
+    float: right;
+}
+
+.cancelBtn {
+    margin-right: 10px;
 }

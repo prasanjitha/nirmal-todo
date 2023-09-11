@@ -1,17 +1,18 @@
 import React, {
+    useContext,
     useEffect,
     useState
 } from 'react';
 
 import './RoundedCheckbox.css';
-import { useTodoContext } from '../../store/TodoContext';
+import { TodoContexts } from '../../global-context/context-providers/TodoContext.provider';
 
 
 const RoundedCheckbox = ({ completed, title, titleId }) => {
 
     const [isChecked, setChecked] = useState(false);
 
-    const { todoStatusUpdate } = useTodoContext();
+    const [state, todoAction] = useContext(TodoContexts);
 
     useEffect(() => {
         setChecked(completed);
@@ -27,7 +28,7 @@ const RoundedCheckbox = ({ completed, title, titleId }) => {
             completed: !isChecked
         }
 
-        todoStatusUpdate(titleId, data);
+        todoAction.editTodoItem(titleId, data)
     }
 
     return (

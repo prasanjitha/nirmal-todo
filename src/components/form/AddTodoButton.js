@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import CustomModel from './CustomModel';
-import Button from '../UI/Button/Button';
+import Button from '../ui-elements/Button/Button';
 
 const AddTodoButton = () => {
 

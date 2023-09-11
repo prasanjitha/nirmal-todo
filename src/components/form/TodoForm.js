@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
-import MyLoader from './ClipLoader';
+
 import classes from './TodoForm.module.css';
-import { useTodoContext } from '../store/TodoContext';
+import { TodoContexts } from '../global-context/context-providers/TodoContext.provider';
+import MyLoader from '../ui-elements/common/ClipLoader';
 
 const TodoForm = ({ cancelModel }) => {
 
@@ -11,7 +12,7 @@ const TodoForm = ({ cancelModel }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [enteredTitleTouch, setEnteredTitleTouch] = useState(false);
 
-    const { addTodo } = useTodoContext();
+    const [state, todoAction] = useContext(TodoContexts);
 
 
     const enteredTitleIsValid = enteredTitle.trim() !== '';
@@ -37,12 +38,11 @@ const TodoForm = ({ cancelModel }) => {
         try {
 
             setIsSubmitting(true);
-            const data = {
-                id: Date.now(),
-                title: enteredTitle,
-                completed: false,
-            };
-            await addTodo(data);
+
+            todoAction.addTodoItem([{
+                "title": enteredTitle,
+                "completed": false
+            }])
 
             setIsSubmitting(false);
             setDidSubmit(true);
@@ -73,13 +73,11 @@ const TodoForm = ({ cancelModel }) => {
                 />
             </div>
             {titleInputIsInvalid && <p className={classes.errorText}>Title must not be empty.</p>}
-            <div>
-                <div className='form-action'>
-                    <button className={classes.formConfirmbtn}>CONFIRM</button>
-                </div>
+            <div className={classes.formActionBtn}>
+                <button className={classes.cancelBtn} onClick={cancelModel}>CANCEL</button>
+                <button >CONFIRM</button>
             </div>
         </form>
-        <button className={classes.formCancelBtn} onClick={cancelModel}>CANCEL</button>
     </React.Fragment>
 
     const isSubmitingFormContent = <p className={classes.success}>Sending title data...</p>;
